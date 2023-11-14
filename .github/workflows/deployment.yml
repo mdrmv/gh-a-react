@@ -10,8 +10,9 @@ jobs:
         run: npm ci
       - name: Test application
         run: npm run test
-  lint:
+  lint: 
     runs-on: ubuntu-22.04
+    needs: test
     steps:
       - name: Get repository code
         uses: actions/checkout@v4
@@ -21,6 +22,7 @@ jobs:
         run: npm run test
   build:
     runs-on: ubuntu-22.04
+    needs: lint
     steps:
       - name: Get repository code
         uses: actions/checkout@v4
