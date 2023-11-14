@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-    ptaths-ignore:
+    paths-ignore:
       - '.github/workflows/*'
 jobs:
   test: 
