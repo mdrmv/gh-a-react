@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+    ptaths-ignore:
+      - '.github/workflows/*'
 jobs:
   test: 
     runs-on: ubuntu-22.04
