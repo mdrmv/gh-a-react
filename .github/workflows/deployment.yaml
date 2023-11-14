@@ -15,7 +15,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: node-modules-deps-${{ hashFiles('**/package-lock.json')}}
+          key: node-modules-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependecies
         run: npm ci
       - name: Test application
@@ -26,6 +26,11 @@ jobs:
     steps:
       - name: Get repository code
         uses: actions/checkout@v4
+      - name: Cash deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json')}}
       - name: Install dependecies
         run: npm ci
       - name: Lint application
